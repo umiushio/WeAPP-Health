@@ -1,7 +1,8 @@
 // pages/index/login.js
 // 获取应用实例
 const app = getApp()
-const AV = require('../../libs/av-core-min.js'); 
+const AV = require('../../libs/av-core-min.js')
+const MD5 = require('../../libs/md5.js')
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
 Page({
   data: {
@@ -21,26 +22,26 @@ Page({
     })
   },
 
-  loginDoctor() {
-    const {
-      username,
-      password,
-    } = this.data;
-    AV.User.logIn(username, password).then(function () {
-      app.setUserName(username)
-      app.setUserRole(0)
-      Toast.success('登录成功');
-      this.time = setTimeout(function(){
-        clearInterval(this.time);
-        wx.reLaunch({
-          url: '../home/home',
-        });
-      }, 1000)
-      // 登录成功，跳转到message页面
-    }, function (error) {
-      Toast.fail('登录失败');
-    });
+  login() {
+    const query = new AV.Query('Users');
+    query.select(['username']);
+    query.equalTo('username', this.data.username);
+    query.equalTo('password',MD5.md5(this.data.password))
+    query.find().then((users) => {
+      if(users.length==0){
+        Toast.fail('登录失败')
+        return
+      }else{
+        Toast.success('登录成功');
+        setTimeout(function(){
+          wx.reLaunch({
+            url: '../home/home',
+          });
+        }, 1000)
+      }
+    })
   },
+
   forgetPswd(){
     Toast.fail('登录成功');
   },

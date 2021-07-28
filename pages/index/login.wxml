@@ -36,9 +36,7 @@
     </view>
   </view>
 </view>
-<view class="menu-button">
-  <van-button round type="primary" bindtap="loginDoctor">医生登录</van-button>
-  <van-button round type="primary">病人登录</van-button>
-  <van-button round type="primary">家属登录</van-button>
+<view class="login-button">
+  <van-button round type="primary" bindtap="login">登录</van-button>
 </view>
 <van-toast id="van-toast" />

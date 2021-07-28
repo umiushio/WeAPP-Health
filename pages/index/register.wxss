@@ -20,15 +20,15 @@
   font-weight: bold;
 }
 .text-view{
-  margin-top: 20px;
+  margin: 25rpx;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-content: space-around;
 }
-.menu-button{
+.reg-button{
   position: fixed;
-  bottom: 50px;
+  bottom: 50rpx;
   left: 0em;
   right: 0em;
   display: flex;
@@ -36,6 +36,7 @@
   justify-content: space-around;
 }
 .privacy{
+  margin: 50rpx;
   font-size: x-small;
   text-align: center;
   line-height: 40px;

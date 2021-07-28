@@ -10,12 +10,34 @@
   </view>
   <van-cell-group>
     <van-field
+      value="{{ phone }}"
+      clearable
+      label="手机号"
+      placeholder="请输入手机号"
+      bind:change="inputPhone"
+    >
+      <van-button slot="button" size="small" type="primary" bind:click="showMsgInfo">
+        发送验证码
+      </van-button>
+    </van-field>
+    <van-field
+      value="{{ msgCode }}"
+      clearable
+      label="验证码"
+      placeholder="请输入短信验证码"
+      bind:change="inputMsgCode"
+    />
+    <van-field
       value="{{ username }}"
       clearable
       label="用户名"
-      placeholder="请输入用户名或手机号"
+      placeholder="请输入用户名"
       bind:change="inputUsername"
     />
+    <van-cell center title="选择身份" value="{{ roleStr }}" is-link bind:click="showRoleSelector"/>
+    <van-popup show="{{ roleSelectorDisplayed }}" position="bottom">
+      <van-picker title="请选择身份" columns="{{ roles }}" show-toolbar="{{ true }}" confirm-button-text="确认" cancel-button-text="取消" bind:confirm="roleConfirm" bind:cancel="roleCancel" />
+    </van-popup>
     <van-field
       value="{{ password }}"
       type="password"
@@ -33,12 +55,12 @@
       bind:change="inputPasswordCheck"
     />
   </van-cell-group >
-    <view class="privacy" style="padding-left:10px; padding-right:10px;">
-      <van-checkbox value="{{ checked }}" bind:change="onChange" label-disabled>
-        <text>我已阅读并同意</text>
-      <text style="color:blue" bindtap="service">《医友日记用户服务协议》</text>
-      <text>和\n</text>
-      <text style="color:blue" bindtap="policy">《隐私政策》</text>
+    <view class="privacy" style="padding-left:80rpx; padding-right:80rpx;">
+      <van-checkbox value="{{ policyChecked }}" bind:change="onAllowChange" label-disabled>
+      <text>我已阅读并同意\n</text>
+      <text style="color:blue" bindtap="showUserPolicy">《医友日记用户服务协议》</text>
+      <text>和</text>
+      <text style="color:blue" bindtap="showPrivicyPolicy">《隐私政策》</text>
     </van-checkbox>
     <view class="goto-login">
       <text>已有账号？请点击</text>
@@ -47,14 +69,11 @@
     </view>
   </view>
 </view>
-<view class="menu-button">
-  <van-button disabled='{{disabled}}' round type="primary" bindtap="registerDoctor">医生注册</van-button>
-  <van-button disabled='{{disabled}}' round type="primary" binndtap="registerPatient">病人注册</van-button>
-  <van-button disabled='{{disabled}}' round type="primary" bindtap="registerFamily">家属注册</van-button>
-</view>
+<van-button class="reg-button" disabled='{{disabled}}' round type="primary" bindtap="register">注册</van-button>
 <van-popup
   show="{{ show }}"
   custom-style="height: 60%; width: 60%"
-  bind:close="onClose"
+  bind:close="onUserPolicyClose"
 >服务协议</van-popup>
 <van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
