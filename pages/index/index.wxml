@@ -23,7 +23,7 @@
   </view>
   <view class="menu-icon">
     <van-icon name="cart-circle" size="40px"></van-icon>
-    <van-icon name="wechat" size="40px"></van-icon>
+    <van-icon name="wechat" bind:click="loginWeChat" size="40px"></van-icon>
     <van-icon name="alipay" size="40px"></van-icon>
   </view>
 </view>
@@ -32,3 +32,15 @@
   custom-style="height: 60%; width: 60%"
   bind:close="onClose"
 >隐私协议</van-popup>
+<van-dialog
+  id="van-dialog"
+  use-slot
+  title="标题"
+  show="{{ showDialog }}"
+  show-cancel-button
+  confirm-button-open-type="getUserInfo"
+  bind:close="onCloseDialog"
+  bind:getuserinfo="getUserInfo"
+>
+  <image src="https://img.yzcdn.cn/1.jpg" />
+</van-dialog>

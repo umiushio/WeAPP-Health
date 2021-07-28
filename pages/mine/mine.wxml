@@ -1,6 +1,8 @@
 <!--pages/mine/mine.wxml-->
-<view class="title" style="margin-top: {{titleTop}}px;height: {{titleHeight}}px">
-  <text>医友</text>
+<view class="nav-bar">
+  <van-nav-bar custom-class="nav-bar">
+    <view slot="title" class="nav-bar-title"><text>医友</text></view>
+  </van-nav-bar>
 </view>
 <view class="space">
   <van-cell-group inset>

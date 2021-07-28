@@ -1,0 +1,17 @@
+/* pages/chat/friends.wxss */
+view .nav-bar{
+  background-color: skyblue;
+}
+.nav-bar-title{
+  padding-bottom: 30px;
+  font-size: x-large;
+  font-weight: bold;
+}
+.nav-bar-username{
+  font-size: larger;
+  font-weight: bold;
+  color: dodgerblue;
+}
+.anchor{
+  background-color: rgb(241, 241, 241) !important;
+}

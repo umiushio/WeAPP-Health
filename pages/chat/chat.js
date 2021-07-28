@@ -220,9 +220,16 @@ Page({
     } else {
       this.setData({
         cntInfo: cntInfo,
-        emptyHidden: true,
       })
     }
+    var flag = false
+    for(var index in this.data.itemLists){
+      if(!this.data.itemLists[index].item.scHidden) {
+        flag = true
+        break
+      }
+    }
+    this.setData({emptyHidden:flag})
   },
   placeTop(event){
     var id = event.currentTarget.dataset.id
@@ -298,5 +305,11 @@ Page({
       [scHidden]: true,
     })
     this.updateInfoTip()
+  },
+  friends(){
+    wx.navigateTo({
+      url: './friends',
+    })
   }
+
 })

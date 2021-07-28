@@ -1,30 +1,25 @@
 <!--pages/home/home.wxml-->
-<view class="title" style="margin-top: {{titleTop}}px;height: {{titleHeight}}px">
-  <text>医友</text>
-</view>
 <view class="nav-bar">
-  <van-nav-bar custom-style="height:28px;">
+  <van-nav-bar custom-class="nav-bar">
     <view slot="left" class="nav-bar-username">
-      <van-icon name="user-circle-o" size="30px" custom-style="width:40px"/>
+      <van-icon name="user-circle-o" size="30px"/>
       <text>{{username}}</text>
     </view>
-    <view slot="title" class="nav-bar-title"><text>首页</text></view>
-    <view slot="right" class="nav-bar-icon">
-      <van-icon name="scan" size="30px" bindtap="scan" custom-style="width:40px"/>
-      <van-icon name="add-o" size="30px" bindtap="add" custom-style="width:40px"/>
-    </view>
+    <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
+</view>
+<view class="search">
   <van-search
     value="{{ valueSearch }}"
     shape="round"
+    use-action-slot
     input-align="center"
-    background="#4fc08d"
     placeholder="请输入搜索关键词"
     bind:change="onChangeSearch"
     bind:search="onSearch"
-  />
+  ><view slot="action" bind:tap="onClick">搜索</view></van-search>
+  <van-icon name="plus" custom-class="plus" bind:click="plus" size="25px"/>
 </view>
-<view>
   <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <view wx:for-items="{{imgData}}">
       <swiper-item>
@@ -61,7 +56,6 @@
       bindtap="onClickDaily"
     />
   </van-grid>
-</view>
 <view class="more-function">
   <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" bind:click="onClick">更多功能</van-button>
 </view>
@@ -82,4 +76,15 @@
   bind:select="onSelectDaily"
   bind:close="onCloseDaily"
 />
-<van-dialog id="van-dialog" />
+<van-dialog id="van-dialog"  />
+<van-overlay show="{{ showOverlay }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="plus-list">
+    <van-cell-group center inset>
+      <van-cell icon="scan" value="扫一扫"></van-cell>
+      <van-cell icon="photo-o" value="相机"></van-cell>
+      <van-cell icon="refund-o" value="收付款"></van-cell>
+    </van-cell-group>
+    </view>
+  </view>
+</van-overlay>

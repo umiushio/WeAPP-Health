@@ -1,0 +1,21 @@
+<!--pages/chat/friends.wxml-->
+<view class="nav-bar">
+  <van-nav-bar custom-class="nav-bar">
+    <view slot="left" class="nav-bar-username">
+      <van-icon name="user-circle-o" size="30px"/>
+      <text>{{username}}</text>
+    </view>
+    <view slot="title" class="nav-bar-title"><text>我的病人</text></view>
+  </van-nav-bar>
+</view>
+<van-cell-group>
+  <van-cell title="新的病人" icon="contact" />
+  <van-cell title="群聊" icon="friends" />
+  <van-cell title="标签" icon="label" />
+</van-cell-group>
+<van-index-bar sticky-offset-top="{{statusHeight}}">
+  <view wx:for="{{indexAnchorList}}">
+    <view class="anchor"><van-index-anchor  index="{{item.index}}" /></view>
+    <van-cell wx:for="{{item.cellList}}" wx:for-item="cell" title="{{cell.name}}" value="{{cell.value}}" icon="user-o" />
+  </view>
+</van-index-bar>

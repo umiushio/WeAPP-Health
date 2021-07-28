@@ -64,7 +64,7 @@ Page({
     ],
     dakara:'未打卡',
     dotShow: true,
-
+    showOverlay: false,
   },
 
   /**
@@ -203,7 +203,7 @@ Page({
         });
       }
     }else {
-      Dialog.confirm({
+      Dialog.alert({
         message: event.detail.name,
         beforeClose,
         theme: 'round-button',
@@ -212,4 +212,14 @@ Page({
       })
     }
   },
+  plus(){
+    this.setData({
+      showOverlay: true,
+    })
+  },
+  onClickHide(){
+    this.setData({
+      showOverlay: false,
+    })
+  }
 })

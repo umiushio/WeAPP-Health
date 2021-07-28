@@ -48,9 +48,9 @@
   </view>
 </view>
 <view class="menu-button">
-  <van-button disabled='{{disabled}}' round type="primary" bindtap="registerDoctor">医生注册</van-button>
-  <van-button disabled='{{disabled}}' round type="primary" binndtap="registerPatient">病人注册</van-button>
-  <van-button disabled='{{disabled}}' round type="primary" bindtap="registerFamily">家属注册</van-button>
+  <van-button disabled='{{disabled}}' round type="primary" bind:click="registerDoctor">医生注册</van-button>
+  <van-button disabled='{{disabled}}' round type="primary" bind:click="registerPatient">病人注册</van-button>
+  <van-button disabled='{{disabled}}' round type="primary" bind:click="registerFamily">家属注册</van-button>
 </view>
 <van-popup
   show="{{ show }}"

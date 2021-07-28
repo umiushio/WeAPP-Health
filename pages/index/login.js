@@ -5,7 +5,7 @@ const AV = require('../../libs/av-core-min.js');
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
 Page({
   data: {
-    navBarHeight: app.globalData.navBarHeight,
+    titleHeight: app.globalData.titleHeight,
     username: '',
     password: '',
   },
@@ -47,6 +47,11 @@ Page({
   gotoRegister(){
     wx.navigateTo({
       url: './register',
+    })
+  },
+  onClickLeft(){
+    wx.redirectTo({
+      url: './index',
     })
   }
 })

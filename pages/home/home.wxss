@@ -1,24 +1,13 @@
 /* pages/home/home.wxss */
-.title{
-  text-align: center;
-  color: white;
+view .nav-bar{
   background-color: skyblue;
-  font-size: xx-large;
-  font-weight: bolder;
-}
-.nav-bar{
-  margin-top: 0ch;
 }
 .nav-bar-title{
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-  font-size: x-large;
+  padding-bottom: 30px;
+  font-size: xx-large;
   font-weight: bold;
 }
 .nav-bar-username{
-  margin-top: -10px;
   font-size: larger;
   font-weight: bold;
   color: dodgerblue;
@@ -31,4 +20,26 @@
 .more-function{
   text-align: center;
   font-weight: bold;
+}
+.search{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: "#4fc08d";
+}
+.plus{
+  background-color: "#4fc08d";
+  padding-right: 15px;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 60%;
+}
+.plus-list{
+  background-color: white;
+  margin-right: 5px;
+  width: 150px;
 }

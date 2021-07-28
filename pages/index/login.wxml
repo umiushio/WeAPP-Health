@@ -1,5 +1,10 @@
 <!--pages/index/login.wxml-->
-<view style="margin-top:{{navBarHeight}}px">
+<van-nav-bar
+  left-arrow
+  left-text="返回"
+  bind:click-left="onClickLeft"
+></van-nav-bar>
+<view>
   <van-notice-bar
   left-icon="volume-o"
   text="因为生命，必须要能够忍受孤独······ 因为生命，必须要有与孤独为伴的力量······"
