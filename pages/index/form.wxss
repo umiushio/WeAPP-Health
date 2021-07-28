@@ -1,0 +1,33 @@
+/* pages/index/form.wxss */
+.skip{
+  position: absolute;
+  right: 0ch;
+  font-size: medium;
+}
+.title{
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  color: green;
+}
+.form{
+  text-align: center;
+  line-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+.radioGender{
+  display: flex;
+  justify-content: space-around;
+}
+.labelDis{
+  position: absolute;
+  left: 20px;
+}
+.submit{
+  position: fixed;
+  bottom: 30px;
+  left: 0px;
+  right: 0px;
+}

@@ -1,0 +1,44 @@
+<!--pages/index/login.wxml-->
+<view style="margin-top:{{navBarHeight}}px">
+  <van-notice-bar
+  left-icon="volume-o"
+  text="因为生命，必须要能够忍受孤独······ 因为生命，必须要有与孤独为伴的力量······"
+/>
+  <view class="text-view">
+    <text class="title">欢迎使用医友日记</text>
+    <text class="title-bak">用户登录</text>
+  </view>
+  <van-cell-group>
+    <van-field
+      value="{{ username }}"
+      clearable
+      label="用户名"
+      placeholder="请输入用户名或手机号"
+      bind:change="inputUsername"
+    />
+    <van-field
+      value="{{ password }}"
+      type="password"
+      label="密码"
+      placeholder="请输入密码"
+      border="{{ false }}"
+      bind:change="inputPassword"
+    />
+  </van-cell-group>
+  <view >
+    <view class="forget-pswd">
+      <text style="text-decoration:underline;" bindtap="forgetPswd">忘记密码</text>
+    </view>
+    <view class="goto-register">
+      <text>还没有账号？请点击</text>
+      <text style="text-decoration:underline; color:red" bindtap="gotoRegister">此处</text>
+      <text>注册</text>
+    </view>
+  </view>
+</view>
+<view class="menu-button">
+  <van-button round type="primary" bindtap="loginDoctor">医生登录</van-button>
+  <van-button round type="primary">病人登录</van-button>
+  <van-button round type="primary">家属登录</van-button>
+</view>
+<van-toast id="van-toast" />

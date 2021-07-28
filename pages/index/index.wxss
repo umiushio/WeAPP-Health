@@ -1,0 +1,56 @@
+.background-img{
+  position: absolute;
+  top:0em;
+  left: 0em;
+  right: 0em;
+  bottom: 0em;
+}
+.title{
+  margin-top: 20px;
+  font-size: xx-large;
+  color: red;
+  font-weight: bolder;
+  height: 50px;
+
+}
+.title-bak{
+  font-size: x-large;
+  color: red;
+  font-weight: bold;
+  height: 30px;
+}
+.text-view{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: space-around;
+}
+.text-privacy{
+  font-size: small;
+}
+.menu-button{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  text-align: center;
+  width: 100%;
+  line-height: 30px;
+}
+.button{
+  margin-top: 20px;
+  width:50%;
+}
+.menu-bottom{
+  position: fixed;
+  left: 0em;
+  right: 0em;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

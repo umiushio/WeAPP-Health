@@ -1,0 +1,46 @@
+/* pages/index/register.wxss */
+.background-img{
+  position: absolute;
+  top:0em;
+  left: 0em;
+  right: 0em;
+  bottom: 0em;
+}
+.title{
+  margin-top: 20px;
+  height: 60px;
+  font-size: x-large;
+  color: red;
+  font-weight: bolder;
+}
+.title-bak{
+  height: 40px;
+  font-size: larger;
+  color: green;
+  font-weight: bold;
+}
+.text-view{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: space-around;
+}
+.menu-button{
+  position: fixed;
+  bottom: 50px;
+  left: 0em;
+  right: 0em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.privacy{
+  font-size: x-small;
+  text-align: center;
+  line-height: 40px;
+}
+.gotologin{
+  font-size: x-small;
+  text-align: center;
+}

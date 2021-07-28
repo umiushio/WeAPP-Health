@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="text-view">
+    <text class="title">医友日记</text>
+    <text class="title-bak">健康守护</text>
+  </view>
+</view>
+<view class="menu-button">
+  <view>
+    <van-button round type="primary" icon="user-circle-o" custom-class="button" bindtap="login">登录</van-button>
+  </view>
+  <view>
+    <van-button round type="primary" icon="idcard" custom-class="button" bindtap="register">注册</van-button>
+  </view>
+  <view class="text-privacy">
+    <text>隐私协议</text>
+    <text decode="true" style="color:blue;" bindtap="privacy">&lt;需要授权&gt;</text>
+  </view>
+</view>
+<view class="menu-bottom">
+  <view>
+    <van-divider contentPosition="center">第三方登录</van-divider>
+  </view>
+  <view class="menu-icon">
+    <van-icon name="cart-circle" size="40px"></van-icon>
+    <van-icon name="wechat" size="40px"></van-icon>
+    <van-icon name="alipay" size="40px"></van-icon>
+  </view>
+</view>
+<van-popup
+  show="{{ show }}"
+  custom-style="height: 60%; width: 60%"
+  bind:close="onClose"
+>隐私协议</van-popup>

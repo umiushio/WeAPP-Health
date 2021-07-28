@@ -1,0 +1,20 @@
+<!--Components/chat-record/chat-reord.wxml-->
+<template name="chat-record">
+  <view hidden="{{scHidden}}">
+        <van-swipe-cell right-width="{{ rightWidth }}">
+          <van-cell center custom-class="{{customClass}}">
+            <van-icon slot="icon" name="user-o" size="30px"></van-icon>
+            <view slot="title" style="padding-left: 10px;">
+              <view class="user-name"><text>{{username}}</text></view>
+              <van-tag plain>{{tag}}</van-tag>
+            </view>
+              <van-icon slot="right-icon" info="{{cntInfo}}"></van-icon>
+            </van-cell>
+          <view slot="right" class="swipe-right">
+            <van-button type="info" data-id="{{dataId}}" custom-style="height:70px;" bindtap="{{placeTopFun}}">{{topText}}</van-button>
+            <van-button type="warning" data-id="{{dataId}}" custom-style="height:70px;"  bindtap="{{readFun}}">{{readText}}</van-button>
+            <van-button type="danger" data-id="{{dataId}}" custom-style="height:70px;" bindtap="{{removeFun}}">删除</van-button>
+          </view>
+        </van-swipe-cell>
+      </view>
+</template>

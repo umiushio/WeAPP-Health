@@ -1,0 +1,58 @@
+<!--pages/chat/chat.wxml-->
+<import src="/Components/chat-record/chat-reord.wxml"></import>
+<view class="title" style="margin-top: {{titleTop}}px;height: {{titleHeight}}px">
+  <text>医友</text>
+</view>
+<view class="nav-bar">
+  <van-nav-bar custom-style="height:28px;">
+    <view slot="left" class="nav-bar-username">
+      <van-icon name="user-circle-o" size="30px" custom-style="width:40px"/>
+      <text>{{username}}</text>
+    </view>
+    <view slot="title" class="nav-bar-title"><text>聊天</text></view>
+    <view slot="right" class="nav-bar-icon">
+      <van-icon name="add" size="30px" bindtap="add" custom-style="width:40px"/>
+    </view>
+  </van-nav-bar>
+  <van-search
+    value="{{ valueSearch }}"
+    shape="round"
+    input-align="center"
+    background="#4fc08d"
+    placeholder="请输入搜索关键词"
+    bind:change="onChangeSearch"
+    bind:search="onSearch"
+  />
+</view>
+<view>
+  <van-tabs type="card">
+    <van-tab title="患者" info="{{cntInfo}}">
+      <van-cell-group>
+      <template is="chat-record" wx:for="{{itemLists}}" data="{{...item.item}}"></template>
+      <view hidden="{{emptyHidden}}">
+        <van-empty
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+        description="暂无消息"
+      />
+      </view>
+      </van-cell-group>
+    </van-tab>
+    <van-tab title="同事">
+      <van-empty
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+        description="暂无消息"
+      />
+    </van-tab>
+    <van-tab title="留言">
+      <van-empty
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+        description="暂无留言"
+      />
+    </van-tab>
+    </van-tabs>
+</view>
+<van-tabbar active="{{ active }}" bind:change="onChangeTabbar">
+  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item icon="chat-o" info="{{cntInfo}}">聊天</van-tabbar-item>
+  <van-tabbar-item icon="user-o">我的</van-tabbar-item>
+</van-tabbar>

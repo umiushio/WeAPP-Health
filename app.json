@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/index/ad",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/index/login",
+    "pages/index/register",
+    "pages/home/home",
+    "pages/index/form",
+    "pages/chat/chat",
+    "pages/mine/mine",
+    "pages/manage/manage",
+    "Components/chat-record/chat-reord"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-circle": "@vant/weapp/circle/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天"
+      },
+      {
+        "pagePath": "pages/manage/manage",
+        "text": "管理"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

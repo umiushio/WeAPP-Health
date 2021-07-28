@@ -1,0 +1,85 @@
+<!--pages/home/home.wxml-->
+<view class="title" style="margin-top: {{titleTop}}px;height: {{titleHeight}}px">
+  <text>医友</text>
+</view>
+<view class="nav-bar">
+  <van-nav-bar custom-style="height:28px;">
+    <view slot="left" class="nav-bar-username">
+      <van-icon name="user-circle-o" size="30px" custom-style="width:40px"/>
+      <text>{{username}}</text>
+    </view>
+    <view slot="title" class="nav-bar-title"><text>首页</text></view>
+    <view slot="right" class="nav-bar-icon">
+      <van-icon name="scan" size="30px" bindtap="scan" custom-style="width:40px"/>
+      <van-icon name="add-o" size="30px" bindtap="add" custom-style="width:40px"/>
+    </view>
+  </van-nav-bar>
+  <van-search
+    value="{{ valueSearch }}"
+    shape="round"
+    input-align="center"
+    background="#4fc08d"
+    placeholder="请输入搜索关键词"
+    bind:change="onChangeSearch"
+    bind:search="onSearch"
+  />
+</view>
+<view>
+  <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <view wx:for-items="{{imgData}}">
+      <swiper-item>
+        <image src="{{item.imgurl}}" mode="widthFix" />
+      </swiper-item>
+    </view>
+  </swiper>
+  <van-grid clickable column-num="2">
+    <van-grid-item
+      icon="manager"
+      link-type="navigateTo"
+      url="/pages/dashboard/index"
+      text="病人近况"
+    />
+    <van-grid-item
+      icon="column"
+      link-type="navigateTo"
+      url="/pages/dashboard/index"
+      text="精彩专栏"
+    />
+  </van-grid>
+  <van-grid clickable column-num="2">
+    <van-grid-item
+      icon="browsing-history-o"
+      link-type="navigateTo"
+      url="/pages/dashboard/index"
+      text="诊断历史"
+    />
+    <van-grid-item
+      icon="todo-list-o"
+      link-type="navigateTo"
+      text="每日任务"
+      info="{{dakara}}"
+      bindtap="onClickDaily"
+    />
+  </van-grid>
+</view>
+<view class="more-function">
+  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" bind:click="onClick">更多功能</van-button>
+</view>
+<van-tabbar active="{{active}}" bind:change="onChangeTabbar">
+  <van-tabbar-item icon="home-o" dot="{{dotShow}}">首页</van-tabbar-item>
+  <van-tabbar-item icon="chat-o">聊天</van-tabbar-item>
+  <van-tabbar-item icon="user-o" >我的</van-tabbar-item>
+</van-tabbar>
+<van-share-sheet show="{{ showShare }}"
+  title="更多功能"
+  options="{{ options }}"
+  bind:select="onSelect"
+  bind:close="onClose" />
+  <van-share-sheet
+  show="{{ showDaily }}"
+  title="每日任务"
+  options="{{ optionsDaily }}"
+  bind:select="onSelectDaily"
+  bind:close="onCloseDaily"
+/>
+<van-dialog id="van-dialog" />

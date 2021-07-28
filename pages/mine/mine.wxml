@@ -1,0 +1,72 @@
+<!--pages/mine/mine.wxml-->
+<view class="title" style="margin-top: {{titleTop}}px;height: {{titleHeight}}px">
+  <text>医友</text>
+</view>
+<view class="space">
+  <van-cell-group inset>
+  <van-cell
+  is-link
+  link-type="navigateTo"
+  value="空间"
+  center
+  url="./space"
+  >
+    <view slot="title">
+      <view class="text-username">{{username}}</view>
+      <van-tag round color="purple">絶不調</van-tag>
+    </view>
+    <van-icon name="user-circle-o" slot="icon" size="{{30}}px"/>
+  </van-cell>
+</van-cell-group>
+</view>
+<view >
+<scroll-view scroll-y="true" style="height: {{scrollHeight}}px;padding-bottom:5px;" >
+  <view class="content-bak">
+  <van-cell-group>
+    <van-cell center value="现在充值会员即刻享七折优惠">
+      <van-icon slot="icon" size="50px" name="vip-card"></van-icon>
+      <view slot="title">
+        <view>医友会员</view>
+        <van-tag mark color="red">VIP</van-tag>
+      </view>
+      <van-icon dot slot="right-icon" custom-style="padding-right:5px"></van-icon>
+      <van-icon name="arrow"slot="right-icon" custom-style="padding:5px"></van-icon>
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="content">
+  <van-cell-group>
+    <van-cell title="生活圈" icon="friends" is-link></van-cell>
+    <van-cell title="公益" icon="fire" is-link></van-cell>
+    <van-cell center value="您有新的账单" title="账单" icon="bill">
+      <van-icon dot slot="right-icon" custom-style="padding-right:5px"></van-icon>
+      <van-icon name="arrow"slot="right-icon" custom-style="padding:5px"></van-icon>
+    </van-cell>
+    <van-cell title="余额" icon="diamond" value="0.00" is-link>
+     
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="content-bak">
+  <van-cell-group>
+    <van-cell title="客服" icon="service" is-link></van-cell>
+    <van-cell center value="有新商品上架了" title="商城" icon="shop">
+      <van-icon dot slot="right-icon" custom-style="padding-right:5px"></van-icon>
+      <van-icon name="arrow"slot="right-icon" custom-style="padding:5px"></van-icon>
+    </van-cell>
+    <van-cell title="设置" icon="setting" is-link>
+     
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="more-function">
+  <van-button round color="linear-gradient(to right, rgb(241, 30, 30), red)" bind:click="loginOut">退出登录</van-button>
+</view>
+</scroll-view>
+</view>
+
+<van-tabbar active="{{ active }}" bind:change="onChangeTabbar">
+  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item icon="chat-o">聊天</van-tabbar-item>
+  <van-tabbar-item icon="user-o">我的</van-tabbar-item>
+</van-tabbar>

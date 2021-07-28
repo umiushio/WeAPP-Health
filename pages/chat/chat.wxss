@@ -1,0 +1,50 @@
+/* pages/chat/chat.wxss */
+@import "/Components/chat-record/chat-reord.wxss";
+.title{
+  text-align: center;
+  color: white;
+  background-color: skyblue;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.nav-bar{
+  margin-top: 0ch;
+}
+.nav-bar-title{
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  font-size: x-large;
+  font-weight: bold;
+}
+.nav-bar-username{
+  margin-top: -10px;
+  font-size: larger;
+  font-weight: bold;
+  color: dodgerblue;
+}
+.nav-bar-icon{
+  margin-top: -12px;
+  margin-right: 0ch;
+  color: dodgerblue;
+}
+.delete{
+  width:40px;
+  height: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+.placeTop{
+  width:40px;
+  height: 100%;
+  background-color: grey;
+  color: orange;
+  text-align: center;
+}
+.swipe-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}

@@ -1,0 +1,23 @@
+<!--pages/index/ad.wxml-->
+<view style="margin-top:{{navBarHeight}}px;">
+  <van-circle value="{{ countdownValue }}" stroke-width="3" class="skip" size="60" fill="greenyellow" text="跳过 {{countdown}}" bindtap="clearAD" />
+</view>
+<view class="container">
+    <!--轮播图-->
+  <swiper class="home-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <view wx:for-items="{{imgData}}">
+      <swiper-item>
+        <image src="{{item.imgurl}}" class="slide-image" />
+      </swiper-item>
+    </view>
+  </swiper>
+  <view style="height: 20px"></view>
+  <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <view wx:for-items="{{textData}}">
+      <swiper-item class="ad">
+        <text class="title">{{item.title}}</text>
+        <text class="introduction">{{item.introduction}}</text>
+      </swiper-item>
+    </view>
+  </swiper>
+</view>
