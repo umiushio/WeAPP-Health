@@ -2,7 +2,7 @@
 <template name="chat-record">
   <view hidden="{{scHidden}}">
         <van-swipe-cell right-width="{{ rightWidth }}">
-          <van-cell center custom-class="{{customClass}}">
+          <van-cell center custom-class="{{customClass}}" data-id="{{dataId}}" bindtap="{{clickFun}}">
             <van-icon slot="icon" name="user-o" size="30px"></van-icon>
             <view slot="title" style="padding-left: 10px;">
               <view class="user-name"><text>{{username}}</text></view>

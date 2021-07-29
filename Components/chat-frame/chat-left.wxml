@@ -1,0 +1,7 @@
+<!--Components/chat-frame/chat-left.wxml-->
+<template name="chat-left">
+  <view class="chat-left">
+    <van-icon name="user-o" size="30px" style="padding: 6px"></van-icon>
+    <text class="text-left">{{text}}</text>
+  </view>
+</template>

@@ -1,28 +1,25 @@
 <!--pages/chat/chat.wxml-->
 <import src="/Components/chat-record/chat-reord.wxml"></import>
-<view class="title" style="margin-top: {{titleTop}}px;height: {{titleHeight}}px">
-  <text>医友</text>
-</view>
 <view class="nav-bar">
-  <van-nav-bar custom-style="height:28px;">
-    <view slot="left" class="nav-bar-username">
-      <van-icon name="user-circle-o" size="30px" custom-style="width:40px"/>
+  <van-nav-bar custom-class="nav-bar">
+    <view slot="left" class="nav-bar-user">
+      <van-icon name="user-circle-o" size="30px"/>
       <text>{{username}}</text>
     </view>
-    <view slot="title" class="nav-bar-title"><text>聊天</text></view>
-    <view slot="right" class="nav-bar-icon">
-      <van-icon name="add" size="30px" bindtap="add" custom-style="width:40px"/>
-    </view>
+    <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
+</view>
+<view class="search">
   <van-search
     value="{{ valueSearch }}"
     shape="round"
+    use-action-slot
     input-align="center"
-    background="#4fc08d"
     placeholder="请输入搜索关键词"
     bind:change="onChangeSearch"
     bind:search="onSearch"
-  />
+  ></van-search>
+  <van-icon name="friends-o" custom-class="friends" bind:click="friends" size="25px"/>
 </view>
 <view>
   <van-tabs type="card">

@@ -1,0 +1,13 @@
+/* Components/chat-frame/chat-left.wxss */
+.chat-left{
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  text-overflow:ellipsis; word-wrap:break-word;
+}
+.text-left{
+  padding: 10px;
+  border-radius: 10px;
+  max-width:60%;
+  background-color: greenyellow;
+}

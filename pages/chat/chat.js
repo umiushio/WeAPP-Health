@@ -44,6 +44,7 @@ Page({
         item:{
           scHidden: true,
           rightWidth: 235,
+          clickFun: "gotoChat",
           customClass: "back-color",
           username: "",
           tag: "",
@@ -61,6 +62,7 @@ Page({
         item:{
           scHidden: false,
           rightWidth: 205,
+          clickFun: "gotoChat",
           username: "uma",
           tag: "絶不調",
           cntInfo: 3,
@@ -76,6 +78,7 @@ Page({
         item:{
           scHidden: false,
           rightWidth: 205,
+          clickFun: "gotoChat",
           username: "umi",
           tag: "絶不調",
           cntInfo: 2,
@@ -90,6 +93,7 @@ Page({
         item:{
           scHidden: false,
           rightWidth: 205,
+          clickFun: "gotoChat",
           username: "ushio",
           tag: "絶不調",
           cntInfo: 6,
@@ -220,9 +224,16 @@ Page({
     } else {
       this.setData({
         cntInfo: cntInfo,
-        emptyHidden: true,
       })
     }
+    var flag = false
+    for(var index in this.data.itemLists){
+      if(!this.data.itemLists[index].item.scHidden) {
+        flag = true
+        break
+      }
+    }
+    this.setData({emptyHidden:flag})
   },
   placeTop(event){
     var id = event.currentTarget.dataset.id
@@ -298,5 +309,16 @@ Page({
       [scHidden]: true,
     })
     this.updateInfoTip()
+  },
+  friends(){
+    wx.navigateTo({
+      url: './friends',
+    })
+  },
+  gotoChat(event){
+    wx.navigateTo({
+      url: "./wechat?chatName=" + this.data.itemLists[event.currentTarget.dataset.id].item.username,
+    })
   }
+
 })
