@@ -7,7 +7,6 @@ AV.setAdapters(adapters);
 AV.init({
   appId: '6bGa1f8Y2XxTFxYQEVvkft7H-gzGzoHsz',
   appKey: '3Uf6wClVnUvk23E72LD9I0jz',
-
   serverURLs: "https://6bga1f8y.lc-cn-n1-shared.com",
 });
 App({
