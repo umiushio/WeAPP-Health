@@ -4,11 +4,14 @@
   left-icon="volume-o"
   text="{{textValue}}"
   />
+</view>
   <view class="text-view">
     <text class="title">欢迎使用医友日记</text>
     <text class="title-bak">用户注册</text>
   </view>
-  <van-cell-group>
+  <view class="input-background">
+  <view class="input-padding">
+  <van-cell-group inset>
     <van-field
       value="{{ phone }}"
       clearable
@@ -27,6 +30,15 @@
       placeholder="请输入短信验证码"
       bind:change="inputMsgCode"
     />
+  </van-cell-group>
+</view>
+<view class="input-padding">
+  <van-cell-group inset>
+    <van-cell center title="选择身份">
+    <van-dropdown-menu>
+      <van-dropdown-item value="{{role}}" options="{{roleOption}}"/>
+    </van-dropdown-menu>
+    </van-cell>
     <van-field
       value="{{ username }}"
       clearable
@@ -34,10 +46,10 @@
       placeholder="请输入用户名"
       bind:change="inputUsername"
     />
-    <van-cell center title="选择身份" value="{{ roleStr }}" is-link bind:click="showRoleSelector"/>
+    <!--van-cell center title="选择身份" value="{{ roleStr }}" is-link bind:click="showRoleSelector"/>
     <van-popup show="{{ roleSelectorDisplayed }}" position="bottom">
       <van-picker title="请选择身份" columns="{{ roles }}" show-toolbar="{{ true }}" confirm-button-text="确认" cancel-button-text="取消" bind:confirm="roleConfirm" bind:cancel="roleCancel" />
-    </van-popup>
+    </van-popup-->
     <van-field
       value="{{ password }}"
       type="password"
@@ -55,10 +67,13 @@
       bind:change="inputPasswordCheck"
     />
   </van-cell-group >
-    <view class="privacy" style="padding-left:80rpx; padding-right:80rpx;">
+  </view>
+</view>
+<view class="bottom">
+    <view class="privacy" style="padding-left:50rpx; padding-right:50rpx;">
       <van-checkbox value="{{ policyChecked }}" bind:change="onAllowChange" label-disabled>
-      <text>我已阅读并同意\n</text>
-      <text style="color:blue" bindtap="showUserPolicy">《医友日记用户服务协议》</text>
+      <text>我已阅读并同意</text>
+      <text style="color:blue" bindtap="showUserPolicy">《医友日记用户服务协议》\n</text>
       <text>和</text>
       <text style="color:blue" bindtap="showPrivicyPolicy">《隐私政策》</text>
     </van-checkbox>
@@ -68,8 +83,10 @@
       <text>登录</text>
     </view>
   </view>
+  <view>
+  <van-button size="large" disabled='{{disabled}}' round type="primary" bindtap="register">注册</van-button>
+  </view>
 </view>
-<van-button class="reg-button" disabled='{{disabled}}' round type="primary" bindtap="register">注册</van-button>
 <van-popup
   show="{{ show }}"
   custom-style="height: 60%; width: 60%"

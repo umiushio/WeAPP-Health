@@ -1,47 +1,44 @@
 /* pages/index/register.wxss */
-.background-img{
-  position: absolute;
-  top:0em;
-  left: 0em;
-  right: 0em;
-  bottom: 0em;
+.input-background{
+  background-color: gainsboro;
+}
+.input-padding{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
 }
 .title{
-  margin-top: 20px;
-  height: 60px;
-  font-size: x-large;
+  height: 90rpx;
+  font-size: 60rpx;
   color: red;
   font-weight: bolder;
+  padding: 10rpx;
 }
 .title-bak{
-  height: 40px;
-  font-size: larger;
+  height: 70rpx;
+  font-size: 50rpx;
   color: green;
   font-weight: bold;
 }
 .text-view{
-  margin: 25rpx;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-content: space-around;
+  padding: 20rpx;
 }
-.reg-button{
-  position: fixed;
-  bottom: 50rpx;
-  left: 0em;
-  right: 0em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+
 .privacy{
-  margin: 50rpx;
-  font-size: x-small;
+  font-size: small;
   text-align: center;
   line-height: 40px;
 }
 .gotologin{
-  font-size: x-small;
+  font-size: small;
   text-align: center;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding: 30rpx;
 }

@@ -4,16 +4,17 @@
   left-text="返回"
   bind:click-left="onClickLeft"
 ></van-nav-bar>
-<view>
-  <van-notice-bar
+<van-notice-bar
   left-icon="volume-o"
   text="{{textValue}}"
 />
-  <view class="text-view">
-    <text class="title">欢迎使用医友日记</text>
-    <text class="title-bak">用户登录</text>
-  </view>
-  <van-cell-group>
+<view class="text-view">
+  <text class="title">欢迎使用医友日记</text>
+  <text class="title-bak">用户登录</text>
+</view>
+<view class="input-background">
+  <view class="input-padding">
+  <van-cell-group inset>
     <van-field
       value="{{ username }}"
       clearable
@@ -30,7 +31,13 @@
       bind:change="inputPassword"
     />
   </van-cell-group>
-  <view >
+  </view>
+</view>
+<view class="bottom">
+  <view style="padding-left:50rpx; padding-right:50rpx;">
+    <view class="message-login">
+      <text style="text-decoration:underline;" bindtap="loginMessage">短信登录</text>
+    </view>
     <view class="forget-pswd">
       <text style="text-decoration:underline;" bindtap="forgetPswd">忘记密码</text>
     </view>
@@ -40,8 +47,8 @@
       <text>注册</text>
     </view>
   </view>
-</view>
-<view class="login-button">
-  <van-button round type="primary" bindtap="login">登录</van-button>
+  <view class="login-button">
+    <van-button size="large" round type="primary" bindtap="login">登录</van-button>
+  </view>
 </view>
 <van-toast id="van-toast" />

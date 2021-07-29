@@ -61,7 +61,8 @@
     "van-sidebar-item": "@vant/weapp/sidebar-item/index",
     "van-overlay": "@vant/weapp/overlay/index",
     "van-index-bar": "@vant/weapp/index-bar/index",
-    "van-index-anchor": "@vant/weapp/index-anchor/index"
+    "van-index-anchor": "@vant/weapp/index-anchor/index",
+    "van-sticky": "@vant/weapp/sticky/index"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

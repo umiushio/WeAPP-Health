@@ -7,25 +7,26 @@
 </view>
 <view class="menu-button">
   <view>
-    <van-button round type="primary" icon="user-circle-o" custom-class="button" bindtap="login">登录</van-button>
+    <van-button round type="primary" size="large" icon="user-circle-o" custom-class="button" bindtap="login">登录</van-button>
   </view>
   <view>
-    <van-button round type="primary" icon="idcard" custom-class="button" bindtap="register">注册</van-button>
+    <van-button round type="primary" size="large" icon="idcard" custom-class="button" bindtap="register">注册</van-button>
   </view>
   <view class="text-privacy">
     <text>隐私协议</text>
     <text decode="true" style="color:blue;" bindtap="privacy">&lt;需要授权&gt;</text>
   </view>
-</view>
+
 <view class="menu-bottom">
   <view>
-    <van-divider contentPosition="center">第三方登录</van-divider>
+    <van-divider contentPosition="center" custom-style="color: #1989fa; border-color: #1989fa;">第三方登录</van-divider>
   </view>
   <view class="menu-icon">
-    <van-icon name="cart-circle" size="40px"></van-icon>
-    <van-icon name="wechat" bind:click="loginWeChat" size="40px"></van-icon>
-    <van-icon name="alipay" size="40px"></van-icon>
+    <van-icon name="cart-circle" size="80rpx"></van-icon>
+    <van-icon name="wechat" bind:click="loginWeChat" size="80rpx"></van-icon>
+    <van-icon name="alipay" size="80rpx"></van-icon>
   </view>
+</view>
 </view>
 <van-popup
   show="{{ show }}"

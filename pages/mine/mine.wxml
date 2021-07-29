@@ -4,6 +4,7 @@
     <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
 </view>
+<van-sticky>
 <view class="space">
   <van-cell-group inset>
   <van-cell
@@ -21,6 +22,7 @@
   </van-cell>
 </van-cell-group>
 </view>
+</van-sticky>
 <view >
 <scroll-view scroll-y="true" style="height: {{scrollHeight}}px;padding-bottom:5px;" >
   <view class="content-bak">

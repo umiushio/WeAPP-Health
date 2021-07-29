@@ -11,23 +11,27 @@
   color: green;
 }
 .form{
+  margin-top: 50rpx;
   text-align: center;
   line-height: 50px;
   display: flex;
   flex-direction: column;
   align-content: space-between;
+  background-color: gainsboro;
+  padding: 20rpx;
 }
 .radioGender{
   display: flex;
   justify-content: space-around;
+  background-color: white;
+  padding: 20rpx;
+  border-radius: 5rpx;
+
 }
 .labelDis{
   position: absolute;
   left: 20px;
 }
 .submit{
-  position: fixed;
-  bottom: 30px;
-  left: 0px;
-  right: 0px;
+  padding: 50rpx;
 }
