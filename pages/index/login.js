@@ -55,5 +55,8 @@ Page({
     wx.redirectTo({
       url: './index',
     })
+  },
+  onLoad:function(options){
+    //TO-DO
   }
 })

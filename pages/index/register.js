@@ -13,6 +13,7 @@ Page({
     password: '',
     passwordCheck: '',
     msgCode: '',
+    policyNotChecked: true,
     policyChecked: false,
     role: 0,
     roleStr: "医生",
@@ -24,11 +25,12 @@ Page({
     },{
       text: '亲属', value: 2
     }],
-    roleSelectorDisplayed: false,
+    // roleSelectorDisplayed: false,
     secondCount:0,
+    msgCodeStr:'发送验证码',
+    msgCodeDisabled:false,
     textValue: "有一天，我察觉到自己一无所有。本以为装满了幸福的口袋，其实空空如也。因为根本就没有努力去收集过，所以是理所当然的。可是，我连这都不明白，漫不经心地虚度着空无的人生。有一天，我突然察觉到自己已经浪费了很多时间。我跟谁都能聊的开，不管那是怎样的人，可是却没有知心朋友。连一个也没有。这意味着什么，其实根本没有考虑的必要。我的人生就是这么单薄。只有曾经是青梅竹马的神户小鸟，是不会对我说客套话的朋友。没错。曾经是。（重新来一次）（下次一定可以成功。）我衷心祈祷着。只是，这大概很难实现吧。大家都在为之忙碌奔波。幸福并不会从天而降。必须靠自己的努力才行。"
   },
-  
   inputUsername(e) {
     this.setData({
       username: e.detail,
@@ -54,47 +56,47 @@ Page({
       passwordCheck: e.detail,
     })
   },
-
   onAllowChange(event){
     this.setData({
+      policyNotChecked: !(event.detail),
       policyChecked: event.detail
     });
   },
-  
-  showRoleSelector(){
-    this.setData({roleSelectorDisplayed:true})
-  },
-
-  roleConfirm(event){
-    const {value,index} = event.detail;
-    this.setData({role:index})
-    switch(index){
-      case 0:
-        this.setData({roleStr:"医生"})
-        break;
-      case 1:
-        this.setData({roleStr:"病人"})
-        break;
-      case 2:
-        this.setData({roleStr:"家属"})
-        break;
-    }
-    this.setData({roleSelectorDisplayed:false})
-  },
-
-  roleCancel(){
-    this.setData({roleSelectorDisplayed:false})
-  },
-
+  // showRoleSelector(){
+  //   this.setData({roleSelectorDisplayed:true})
+  // },
+  // roleConfirm(event){
+  //   const {value,index} = event.detail;
+  //   this.setData({role:index})
+  //   switch(index){
+  //     case 0:
+  //       this.setData({roleStr:"医生"})
+  //       break;
+  //     case 1:
+  //       this.setData({roleStr:"病人"})
+  //       break;
+  //     case 2:
+  //       this.setData({roleStr:"家属"})
+  //       break;
+  //   }
+  //   this.setData({roleSelectorDisplayed:false})
+  // },
+  // roleCancel(){
+  //   this.setData({roleSelectorDisplayed:false})
+  // },
   register(){
+    var that=this
     if(this.data.password != this.data.passwordCheck) {
       Toast.fail('密码不一致')
       return
-    }else if(!this.data.policyChecked){
+    }else if(this.data.policyNotChecked){
       Toast.fail('请同意协议')
       return
     }else if(!this.data.phone){
       Toast.fail('请输入手机号')
+      return
+    }else if(!(/^[1][3,4,5,7,8,9][0-9]{9}$/.test(this.data.phone))){
+      Toast.fail('手机号不合法')
       return
     }else if(!this.data.msgCode){
       Toast.fail('请输入验证码')
@@ -114,29 +116,28 @@ Page({
         Toast.fail('手机已被注册')
         return
       }else{
-        AV.Cloud.verifySmsCode(this.data.msgCode,this.data.phone).then(function(){
+        AV.Cloud.verifySmsCode(that.data.msgCode,that.data.phone).then(function(){
           const Users = AV.Object.extend('Users')
           const user = new Users()
-          user.set('phone',this.data.phone)
-          user.set('username',this.data.username)
-          user.set('password',MD5.md5(this.data.password));
-          user.set('role',this.data.role)
+          user.set('phone',that.data.phone)
+          user.set('username',that.data.username)
+          user.set('password',MD5.md5(that.data.password));
+          user.set('role',that.data.role)
           user.save().then((user) => {
             Toast.success('注册成功')
-            app.setUserName(user.username)
-            app.setUserRole(user.userRole)
-            setTimeout(function(){wx.reLaunch({url: './form'})},1000)
+            app.setUserName(that.data.username)
+            app.setUserRole(that.data.role)
+            setTimeout(function(){wx.reLaunch({url: './login'})},1000)
           }, (error) => {
             Toast.fail('网络错误')
           })
-           }, function(err){
-            Toast.fail('验证码有误')
-            return
-       })
+        }, function(err){
+          Toast.fail('验证码有误')
+          return
+        })
       }
     })
   },
-
   gotoLogin(){
     wx.navigateTo({
       url: './login',
@@ -157,14 +158,27 @@ Page({
   },
   showMsgInfo(){
     var that=this
-    if(this.data.secondCount==0){
-      this.setData({secondCount:1})
+    if(!(/^[1][3,4,5,7,8,9][0-9]{9}$/.test(this.data.phone))){
+      Toast.fail('手机号不合法')
+      return
+    }else if(this.data.secondCount==0){
+      this.data.secondCount=60 //Timeout:1 minute
+      this.setData({msgCodeDisabled:true})
+      this.setData({msgCodeStr:"发送验证码"+"("+this.data.secondCount+")"})
       AV.Cloud.requestSmsCode(this.data.phone)
       Dialog.alert({
         title: '短信验证',
         message: '短信验证码已发送，请稍等',
       }).then(() => {})
-      setTimeout(function(){that.setData({secondCount:0})},60*1000) //Timeout:1min
+      this.timer=setInterval(function(){
+        that.data.secondCount--
+        that.setData({msgCodeStr:"发送验证码"+"("+that.data.secondCount+")"})
+        if(that.data.secondCount==0){
+          that.setData({msgCodeDisabled:true})
+          that.setData({msgCodeStr:"发送验证码"})
+          clearInterval(that.timer)
+        }
+      },1000)
     }else{
       Dialog.alert({
         message: '请勿频繁请求验证码',
