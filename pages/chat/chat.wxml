@@ -2,7 +2,7 @@
 <import src="/Components/chat-record/chat-reord.wxml"></import>
 <view class="nav-bar">
   <van-nav-bar custom-class="nav-bar">
-    <view slot="left" class="nav-bar-username">
+    <view slot="left" class="nav-bar-user">
       <van-icon name="user-circle-o" size="30px"/>
       <text>{{username}}</text>
     </view>

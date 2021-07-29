@@ -2,7 +2,7 @@
 <view style="margin-top:{{navBarHeight}}px">
   <van-notice-bar
   left-icon="volume-o"
-  text="因为生命，必须要能够忍受孤独······ 因为生命，必须要有与孤独为伴的力量······"
+  text="{{textValue}}"
   />
   <view class="text-view">
     <text class="title">欢迎使用医友日记</text>

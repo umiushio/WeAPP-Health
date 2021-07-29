@@ -1,0 +1,14 @@
+/* Components/chat-frame/chat-right.wxss */
+.chat-right{
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-overflow:ellipsis; word-wrap:break-word;
+}
+.text-right{
+  padding: 10px;
+  border-radius: 10px;
+  max-width:60%;
+  background-color: darkturquoise;
+}

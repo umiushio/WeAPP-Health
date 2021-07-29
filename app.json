@@ -12,7 +12,10 @@
     "pages/manage/manage",
     "Components/chat-record/chat-reord",
     "pages/index/family",
-    "pages/chat/friends"
+    "pages/chat/friends",
+    "pages/chat/wechat",
+    "Components/chat-frame/chat-left",
+    "Components/chat-frame/chat-right"
   ],
   "window": {
     "navigationStyle": "custom"

@@ -88,5 +88,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  back(){
+    wx.navigateBack({
+      delta: 0,
+    })
   }
 })

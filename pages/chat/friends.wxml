@@ -1,9 +1,8 @@
 <!--pages/chat/friends.wxml-->
 <view class="nav-bar">
-  <van-nav-bar custom-class="nav-bar">
+  <van-nav-bar custom-class="nav-bar" bind:click-left="back">
     <view slot="left" class="nav-bar-username">
-      <van-icon name="user-circle-o" size="30px"/>
-      <text>{{username}}</text>
+      <van-icon name="arrow-left" size="30px"/>
     </view>
     <view slot="title" class="nav-bar-title"><text>我的病人</text></view>
   </van-nav-bar>

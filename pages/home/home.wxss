@@ -7,10 +7,12 @@ view .nav-bar{
   font-size: xx-large;
   font-weight: bold;
 }
-.nav-bar-username{
+.nav-bar-user{
+  color: dodgerblue;
+  display: flex;
+  flex-direction: row;
   font-size: larger;
   font-weight: bold;
-  color: dodgerblue;
 }
 .nav-bar-icon{
   margin-top: -12px;
