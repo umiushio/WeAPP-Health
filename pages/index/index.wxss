@@ -17,38 +17,36 @@
   font-size: x-large;
   color: red;
   font-weight: bold;
-  height: 30px;
+  height: 150rpx;
 }
 .text-view{
-  margin-top: 20px;
+  margin-top: 100rpx;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-content: space-around;
 }
 .text-privacy{
-  font-size: small;
+  font-size: medium;
 }
 .menu-button{
   display: flex;
   flex-direction: column;
-  align-content: space-around;
+  align-content: flex-end;
   text-align: center;
-  width: 100%;
-  line-height: 30px;
+  padding: 50rpx;
+  line-height: 100rpx;
 }
 .button{
-  margin-top: 20px;
+  margin-top: 50rpx;
   width:50%;
 }
 .menu-bottom{
-  position: fixed;
-  left: 0em;
-  right: 0em;
-  bottom: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
+
 .menu-icon{
   display: flex;
   flex-direction: row;

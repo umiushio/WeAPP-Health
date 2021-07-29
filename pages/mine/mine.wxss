@@ -22,7 +22,7 @@ view .nav-bar{
 .space{
   background-color: blue;
   font-size: larger;
-  padding: 8px;
+  padding: 20px;
 }
 .content{
   width: 100%;

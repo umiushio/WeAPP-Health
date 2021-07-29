@@ -9,7 +9,8 @@
     <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
 </view>
-<view class="search">
+<view class="search-column">
+  <view class="search">
   <van-search
     value="{{ valueSearch }}"
     shape="round"
@@ -18,7 +19,7 @@
     placeholder="请输入搜索关键词"
     bind:change="onChangeSearch"
     bind:search="onSearch"
-  ></van-search>
+  ><view slot="action" bind:tap="onClick">搜索</view></van-search></view>
   <van-icon name="friends-o" custom-class="friends" bind:click="friends" size="25px"/>
 </view>
 <view>

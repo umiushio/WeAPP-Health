@@ -3,9 +3,10 @@
   <text>身份信息完善</text>
   <van-circle value="{{0}}" stroke-width="3" class="skip" size="50" fill="greenyellow" text="跳过 {{countdown}}" bindtap="skip"/>
 </view>
-<form style="height:{{formTop}}px">
-  <van-cell-group custom-class="form">
-    <view style="margin-top: 25px">
+<form>
+  <view class="form">
+  <van-cell-group inset>
+    <view>
       <label>您的性别是？</label>
       <view class="radioGender">
         <van-radio-group
@@ -20,7 +21,7 @@
     </view>
     <van-divider />
     <view class="birthday">
-      <label>您的出生日期是？</label>
+      <text>您的出生日期是？</text>
       <van-cell title="选择日期" value="{{ birthday }}" bind:click="onDisplay" bind:leave="onClose"/>
     </view>
     <van-divider />
@@ -31,16 +32,17 @@
         <van-dropdown-item value="{{ valueDis }}" options="{{ optionDis }}" />
       </van-dropdown-menu>
     </view>
-    <view class="submit">
-      <van-button round icon="fire-o" type="info" formType="submit" bindtap="experience">立即体验</van-button>
-    </view>
   </van-cell-group>
+  </view>
+    <view class="submit">
+      <van-button round size="large" icon="fire-o" type="info" formType="submit" bindtap="experience">立即体验</van-button>
+    </view>
 </form>
 <van-popup
   show="{{ show }}"
   round
   position="bottom"
-  custom-style="height: 50%"
+  custom-style="height: 40%"
 >
   <van-datetime-picker
     type="date"

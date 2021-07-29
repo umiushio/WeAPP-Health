@@ -42,10 +42,13 @@ view .nav-bar{
   justify-content: end;
 }
 .search{
+  width: 80%;
+}
+.search-column{
   display: flex;
-  justify-content: center;
-  flex-direction: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .friends{
-  padding-left: 15px;
+  padding-right: 25rpx;
 }

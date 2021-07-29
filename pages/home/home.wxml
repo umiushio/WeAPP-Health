@@ -8,7 +8,8 @@
     <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
 </view>
-<view class="search">
+<view class="search-column">
+  <view class="search">
   <van-search
     value="{{ valueSearch }}"
     shape="round"
@@ -17,13 +18,13 @@
     placeholder="请输入搜索关键词"
     bind:change="onChangeSearch"
     bind:search="onSearch"
-  ><view slot="action" bind:tap="onClick">搜索</view></van-search>
+  ><view slot="action" bind:tap="onClick">搜索</view></van-search></view>
   <van-icon name="plus" custom-class="plus" bind:click="plus" size="25px"/>
 </view>
   <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <view wx:for-items="{{imgData}}">
       <swiper-item>
-        <image src="{{item.imgurl}}" mode="widthFix" />
+        <image src="{{item.imgurl}}" mode="widthFix" class="slide-image"/>
       </swiper-item>
     </view>
   </swiper>
@@ -81,9 +82,11 @@
   <view class="wrapper">
     <view class="plus-list">
     <van-cell-group center inset>
+      <van-cell icon="friends-o" value="添加患者"></van-cell>
       <van-cell icon="scan" value="扫一扫"></van-cell>
-      <van-cell icon="photo-o" value="相机"></van-cell>
+      <van-cell icon="photo-o" value="动态"></van-cell>
       <van-cell icon="refund-o" value="收付款"></van-cell>
+      <van-cell icon="qr" value="二维码"></van-cell>
     </van-cell-group>
     </view>
   </view>

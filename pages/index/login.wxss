@@ -6,44 +6,56 @@
   right: 0em;
   bottom: 0em;
 }
+.input-background{
+  background-color: gainsboro;
+}
+.input-padding{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
 .title{
-  margin-top: 20px;
-  height: 60px;
-  font-size: x-large;
+  height: 90rpx;
+  font-size: 60rpx;
   color: red;
   font-weight: bolder;
+  padding: 10rpx;
 }
 .title-bak{
-  height: 40px;
-  font-size: larger;
+  height: 70rpx;
+  font-size: 50rpx;
   color: green;
   font-weight: bold;
 }
 .text-view{
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-content: space-around;
+  padding: 20rpx;
 }
 .login-button{
-  position: fixed;
-  bottom: 50px;
-  left: 0em;
-  right: 0em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  padding: 50rpx;
 }
 .forget-pswd{
-  margin-top: 20px;
   text-align: center;
   color: red;
-  font-size: small;
+  font-size: medium;
+  line-height: 40px;
+}
+.message-login{
+  text-align: center;
+  color: blue;
+  font-size: medium;
   line-height: 40px;
 }
 .goto-register{
   text-align: center;
-  font-size: small;
+  font-size: medium;
   line-height: 40px;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding: 30rpx;
 }
