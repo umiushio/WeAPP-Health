@@ -19,7 +19,7 @@ Page({
       'chat/chat',
       'mine/mine',
     ],
-    tabberList:[
+    tabbarList:[
       {
         icon: "home-o",
         dotShow: false,
@@ -51,7 +51,7 @@ Page({
       'manage/manage',
       'mine/mine',
     ],
-    tabberList:[
+    tabbarList:[
       {
         icon: "home-o",
         dotShow: false,
@@ -88,7 +88,7 @@ Page({
       'mine/mine',
     ],
     urlColumn: "",
-    tabberList:[
+    tabbarList:[
       {
         icon: "home-o",
         dotShow: false,
@@ -108,7 +108,7 @@ Page({
     ]
   }],
   data: {
-
+    username: app.globalData.userInfo.username
   },
 
   /**

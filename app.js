@@ -30,7 +30,7 @@ App({
   },
   globalData: {
     userInfo: {
-      username: '',
+      username: 'umi',
       userRole: 1,
     },
     navBarHeight: 0, // 导航栏高度

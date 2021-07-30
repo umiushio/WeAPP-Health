@@ -61,7 +61,7 @@
   <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" bind:click="onClick">更多功能</van-button>
 </view>
 <van-tabbar active="{{active}}" bind:change="onChangeTabbar">
-  <van-tabbar-item wx:for="{{tabberList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
+  <van-tabbar-item wx:for="{{tabbarList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
 </van-tabbar>
 <van-share-sheet show="{{ showShare }}"
   title="更多功能"

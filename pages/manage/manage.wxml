@@ -8,6 +8,73 @@
     <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
 </view>
+<view>
+<van-sticky>
+<view class="button-menu">
+  <van-button icon="edit" type="primary">制定今日计划</van-button>
+  <van-button icon="todo-list-o" type="info">查看当前计划</van-button>
+  <van-icon name="plus"></van-icon>
+</view>
+</van-sticky>
+<view class="view-content">
+  <van-cell-group inset>
+    <van-cell center label="排行榜：第5名" size="large" is-link>
+      <view slot="title" class="cell-title-display">
+      <view class="cell-title-text">{{username}}</view>
+      <view class="cell-title-text"><van-tag type="danger">勋爵</van-tag></view>
+      </view>
+      <view class="cell-value-display">
+        <label class="cell-value-label">已连续打卡天数</label>
+        <text>66</text>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="view-content">
+  <van-cell-group inset>
+    <van-cell center label="未吃早餐" size="large" is-link>
+      <view slot="title" class="cell-title-text">饮食管理</view>
+      <view class="cell-value-display">
+        <label class="cell-value-label">今日已摄入卡路里</label>
+        <text>2344</text>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="view-content">
+  <van-cell-group inset>
+    <van-cell center label="运动达标" size="large" is-link>
+      <view slot="title" class="cell-title-text">运动管理</view>
+      <view class="cell-value-display">
+        <label class="cell-value-label">今日已消耗卡路里</label>
+        <text>5421</text>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="view-content">
+  <van-cell-group inset>
+    <van-cell center label="早上未服药" size="large" is-link>
+      <view slot="title" class="cell-title-text">服药管理</view>
+      <view class="cell-value-display">
+        <label class="cell-value-label">今日服药</label>
+        <text>未完成</text>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+<view class="view-content">
+  <van-cell-group inset>
+    <van-cell center label="已测量" size="large" is-link>
+      <view slot="title" class="cell-title-text">血糖趋势</view>
+      <view class="cell-value-display">
+        <label class="cell-value-label">今日血糖情况</label>
+        <text>良好</text>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+</view>
 <van-tabbar active="{{active}}" bind:change="onChangeTabbar">
-  <van-tabbar-item wx:for="{{tabberList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
+  <van-tabbar-item wx:for="{{tabbarList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
 </van-tabbar>

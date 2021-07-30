@@ -19,7 +19,7 @@ Page({
       'chat/chat',
       'mine/mine',
     ],
-    tabberList:[
+    tabbarList:[
       {
         icon: "home-o",
         dotShow: false,
@@ -51,7 +51,7 @@ Page({
       'manage/manage',
       'mine/mine',
     ],
-    tabberList:[
+    tabbarList:[
       {
         icon: "home-o",
         dotShow: false,
@@ -88,7 +88,7 @@ Page({
       'mine/mine',
     ],
     urlColumn: "",
-    tabberList:[
+    tabbarList:[
       {
         icon: "home-o",
         dotShow: false,
@@ -339,7 +339,8 @@ Page({
         break
       }
     }
-    this.setData({emptyHidden:flag})
+    var chatIconInfo = "tabbarList["+this.data.active+"].info";
+    this.setData({emptyHidden:flag, [chatIconInfo]: cntInfo})
   },
   placeTop(event){
     var id = event.currentTarget.dataset.id

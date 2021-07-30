@@ -50,5 +50,5 @@
     </van-tabs>
 </view>
 <van-tabbar active="{{active}}" bind:change="onChangeTabbar">
-  <van-tabbar-item wx:for="{{tabberList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
+  <van-tabbar-item wx:for="{{tabbarList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
 </van-tabbar>
