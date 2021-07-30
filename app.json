@@ -15,7 +15,9 @@
     "pages/chat/friends",
     "pages/chat/wechat",
     "Components/chat-frame/chat-left",
-    "Components/chat-frame/chat-right"
+    "Components/chat-frame/chat-right",
+    "pages/extra/column",
+    "Components/column/column"
   ],
   "window": {
     "navigationStyle": "custom"
@@ -62,7 +64,8 @@
     "van-overlay": "@vant/weapp/overlay/index",
     "van-index-bar": "@vant/weapp/index-bar/index",
     "van-index-anchor": "@vant/weapp/index-anchor/index",
-    "van-sticky": "@vant/weapp/sticky/index"
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

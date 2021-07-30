@@ -1,34 +1,47 @@
 /* pages/manage/manage.wxss */
-.title{
-  text-align: center;
-  color: white;
+view .nav-bar{
   background-color: skyblue;
-  font-size: xx-large;
-  font-weight: bolder;
-}
-.nav-bar{
-  margin-top: 0ch;
 }
 .nav-bar-title{
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-  font-size: x-large;
+  padding-bottom: 50rpx;
+  font-size: xx-large;
   font-weight: bold;
 }
-.nav-bar-username{
-  margin-top: -10px;
+.nav-bar-user{
+  color: dodgerblue;
+  display: flex;
+  flex-direction: row;
   font-size: larger;
   font-weight: bold;
-  color: dodgerblue;
 }
-.nav-bar-icon{
-  margin-top: -12px;
-  margin-right: 0ch;
-  color: dodgerblue;
-}
-.more-function{
+.cell-value-display{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-weight: bold;
+  color: black;
+  font-size: 40rpx;
+}
+.cell-value-label{
+  font-weight: normal;
+  font-size: 30rpx;
+}
+.cell-title-display{
+  display: flex;
+  flex-direction: row;
+}
+.cell-title-text{
+  padding-right: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.view-content{
+  background-color: whitesmoke;
+  padding: 15rpx;
+}
+.button-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 15rpx;
 }

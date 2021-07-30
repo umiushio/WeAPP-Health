@@ -3,7 +3,7 @@
 <view class="nav-bar">
   <van-nav-bar custom-class="nav-bar">
     <view slot="left" class="nav-bar-user">
-      <van-icon name="user-circle-o" size="30px"/>
+      <van-icon name="user-circle-o" size="80rpx"/>
       <text>{{username}}</text>
     </view>
     <view slot="title" class="nav-bar-title"><text>医友</text></view>
@@ -49,8 +49,6 @@
     </van-tab>
     </van-tabs>
 </view>
-<van-tabbar active="{{ active }}" bind:change="onChangeTabbar">
-  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-  <van-tabbar-item icon="chat-o" info="{{cntInfo}}">聊天</van-tabbar-item>
-  <van-tabbar-item icon="user-o">我的</van-tabbar-item>
+<van-tabbar active="{{active}}" bind:change="onChangeTabbar">
+  <van-tabbar-item wx:for="{{tabbarList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
 </van-tabbar>
