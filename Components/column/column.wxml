@@ -1,0 +1,30 @@
+<!--Components/column/column.wxml-->
+<template name="column">
+  <view class="view">
+    <van-cell-group inset>
+      <van-cell center size="large" use-label-slot>
+        <van-icon slot="icon" name="user-circle-o" size="60rpx"/>
+        <view slot="title" class="cell-title">{{updaterName}}</view>
+        <view slot="label" style="padding:20rpx">{{updateTime}}</view>
+        <view class="cell-value">
+          <view class="value-view">
+            <van-icon name="{{storeIcon}}" color="{{storeColor}}" size="50rpx" bind:click="{{storeFun}}"/>
+            <text>{{storeCount}}人收藏</text>
+          </view>
+          <view class="value-view">
+            <van-icon name="{{likeIcon}}" color="{{likeColor}}" size="50rpx" bind:click="{{likeFun}}"/>
+            <text>{{likeCount}}人喜欢</text>
+          </view>
+        </view>
+      </van-cell>
+      <view class="text">
+        <view class="text-title">
+          <text>{{textTitle}}</text>
+        </view>
+        <view class="text-content">
+          <text>{{textContent}}</text>
+        </view>
+      </view>
+    </van-cell-group>
+  </view>
+</template>

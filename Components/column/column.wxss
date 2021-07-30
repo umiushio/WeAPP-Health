@@ -1,0 +1,41 @@
+/* Components/column/column.wxss */
+.view{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.cell-title{
+  padding-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.cell-value{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.value-view{
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+}
+.text{
+  padding: 15rpx;
+  background-color: gainsboro;
+}
+.text-title{
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  background-color: turquoise;
+  border-radius: 20rpx;
+  padding: 10rpx;
+  
+}
+.text-content{
+  margin-top: 20rpx;
+  font-size: 35rpx;
+  text-overflow:ellipsis; word-wrap:break-word;
+  border-radius: 20rpx;
+  background-color: white;
+  padding: 15rpx;
+}

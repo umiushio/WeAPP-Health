@@ -80,7 +80,7 @@ Page({
     clearInterval(this.time)
     clearInterval(this.timeC)
     wx.redirectTo({
-      url: './form',
+      url: '../extra/column',
     })
   },
   /**
