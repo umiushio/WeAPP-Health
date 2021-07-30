@@ -1,5 +1,5 @@
 // index.js
-// 获取应用实例
+const app = getApp()
 import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog'
 
 const beforeClose = (action) => new Promise((resolve) => {
@@ -54,5 +54,23 @@ Page({
       this.onCloseDialog();
       
     });
+  },
+  onLoad:function(){
+    try{
+      app.setPhone(wx.getStorageSync('phone'))
+      app.setUserName(wx.getStorageSync('username'))
+      app.setUserRole(wx.getStorageSync('role'))
+    }catch{
+      app.setPhone(null)
+      app.setUserName(null)
+      app.setUserRole(null)
+    }
+    if(!app.globalData.userInfo.phone){
+      app.setPhone(null)
+      app.setUserName(null)
+      app.setUserRole(null)
+    }else if(!(app.globalData.userInfo.phone===null)){
+      wx.reLaunch({url: '../home/home'})
+    }
   }
 })

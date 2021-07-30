@@ -17,7 +17,8 @@
     "Components/chat-frame/chat-left",
     "Components/chat-frame/chat-right",
     "pages/extra/column",
-    "Components/column/column"
+    "Components/column/column",
+    "pages/index/forget"
   ],
   "window": {
     "navigationStyle": "custom"
