@@ -2,7 +2,7 @@
 <view class="nav-bar">
   <van-nav-bar custom-class="nav-bar">
     <view slot="left" class="nav-bar-user">
-      <van-icon name="user-circle-o" size="30px"/>
+      <van-icon name="user-circle-o" size="80rpx"/>
       <text>{{username}}</text>
     </view>
     <view slot="title" class="nav-bar-title"><text>医友</text></view>

@@ -57,6 +57,7 @@ Page({
     active: 0,
     dakara:'',
     dotShow: false,
+    urlColumn: "../extra/column",
     pathList: [
       'home/home',
       'chat/chat',
@@ -94,6 +95,7 @@ Page({
     active: 0,
     dakara:'',
     dotShow: false,
+    urlColumn: "../extra/column",
     pathList: [
       'home/home',
       'manage/manage',

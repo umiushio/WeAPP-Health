@@ -31,7 +31,7 @@ App({
   globalData: {
     userInfo: {
       username: '',
-      userRole: 0,
+      userRole: 1,
     },
     navBarHeight: 0, // 导航栏高度
     titleTop: wx.getSystemInfoSync().statusBarHeight,

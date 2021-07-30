@@ -1,7 +1,7 @@
 <!--pages/extra/column.wxml-->
 <import src="/Components/column/column.wxml"></import>
 <view class="nav-bar">
-  <van-nav-bar custom-class="nav-bar" left-arrow>
+  <van-nav-bar custom-class="nav-bar" left-arrow bind:click-left="back">
     <view slot="title" class="nav-bar-title"><text>医友</text></view>
   </van-nav-bar>
 </view>

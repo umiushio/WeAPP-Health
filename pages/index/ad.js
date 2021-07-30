@@ -79,8 +79,8 @@ Page({
   clearAD: function() {
     clearInterval(this.time)
     clearInterval(this.timeC)
-    wx.redirectTo({
-      url: '../extra/column',
+    wx.reLaunch({
+      url: '../manage/manage',
     })
   },
   /**

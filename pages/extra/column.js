@@ -126,5 +126,10 @@ Page({
         ["item.likeCount"]: this.data.item.likeCount - 1,
       })
     }
+  },
+  back(){
+    wx.navigateBack({
+      delta: 0,
+    })
   }
 })
