@@ -56,3 +56,25 @@ view .nav-bar{
   margin-right: 10rpx;
   width: 300rpx;
 }
+.popup-content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  padding: 20rpx;
+}
+.popp-content-title{
+  color: red;
+  font-size: 60rpx;
+  padding: 20rpx;
+  font-weight: bold;
+}
+.popp-content-progress{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.popp-content-message{
+  color: blue;
+  font-size: 50rpx;
+  padding: 15rpx;
+}

@@ -18,7 +18,7 @@
 </van-sticky>
 <view class="view-content">
   <van-cell-group inset>
-    <van-cell center label="排行榜：第5名" size="large" is-link>
+    <van-cell center label="排行榜：第5名" size="large" is-link bind:click="clockin">
       <view slot="title" class="cell-title-display">
       <view class="cell-title-text">{{username}}</view>
       <view class="cell-title-text"><van-tag type="danger">勋爵</van-tag></view>
@@ -89,3 +89,23 @@
     </view>
   </view>
 </van-overlay>
+<van-popup
+  show="{{ showPopup }}"
+  round
+  position="center"
+  close-icon-position="top-right"
+  custom-style="width:600rpx"
+  bind:close="onClosePopup"
+>
+<view class="popup-content">
+  <view class="popp-content-title">
+    <text>当前打卡进度</text>
+  </view>
+  <view class="popp-content-progress">
+    <van-progress percentage="66" stroke-width="8" />
+  </view>
+  <view class="popp-content-message">
+    <text>达成目标还需34天</text>
+  </view>
+</view>
+</van-popup>

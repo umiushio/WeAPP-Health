@@ -1,0 +1,11 @@
+<!--pages/manage/clockin.wxml>
+<van-calendar
+  title="打卡记录"
+  poppable="{{ false }}"
+  show-confirm="{{ true }}"
+  formatter="{{ formatter }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  class="calendar"
+/-->
+<van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" />

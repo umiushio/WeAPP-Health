@@ -97,7 +97,23 @@ Page({
   }],
   data: {
     username: app.globalData.userInfo.username,
-    showOverlay: false
+    showOverlay: false,
+    showPopup: false,
+    activeStep: 1,
+    steps: [
+      {
+        text: '今天',
+        desc: '7/30',
+      },
+      {
+        text: '6/8',
+        desc: '漏签3天',
+      },
+      {
+        text: '',
+        desc: '',
+      },
+    ],
   },
 
   /**
@@ -174,5 +190,11 @@ Page({
     this.setData({
       showOverlay: false,
     })
+  },
+  clockin(){
+    this.setData({showPopup: true})
+  },
+  onClosePopup(){
+    this.setData({showPopup: false})
   }
 })
