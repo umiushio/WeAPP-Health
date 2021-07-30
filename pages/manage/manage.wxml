@@ -13,7 +13,7 @@
 <view class="button-menu">
   <van-button icon="edit" type="primary">制定今日计划</van-button>
   <van-button icon="todo-list-o" type="info">查看当前计划</van-button>
-  <van-icon name="plus"></van-icon>
+  <van-icon name="plus" bind:click="plus"></van-icon>
 </view>
 </van-sticky>
 <view class="view-content">
@@ -78,3 +78,14 @@
 <van-tabbar active="{{active}}" bind:change="onChangeTabbar">
   <van-tabbar-item wx:for="{{tabbarList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
 </van-tabbar>
+<van-overlay show="{{ showOverlay }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="plus-list">
+    <van-cell-group center inset>
+      <van-cell icon="browsing-history-o" value="历史记录"></van-cell>
+      <van-cell icon="share-o" value="分享"></van-cell>
+      <van-cell icon="flag-o" value="我的目标"></van-cell>
+    </van-cell-group>
+    </view>
+  </view>
+</van-overlay>
