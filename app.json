@@ -18,7 +18,8 @@
     "Components/chat-frame/chat-right",
     "pages/extra/column",
     "Components/column/column",
-    "pages/index/forget"
+    "pages/index/forget",
+    "pages/manage/clockin"
   ],
   "window": {
     "navigationStyle": "custom"
@@ -66,7 +67,9 @@
     "van-index-bar": "@vant/weapp/index-bar/index",
     "van-index-anchor": "@vant/weapp/index-anchor/index",
     "van-sticky": "@vant/weapp/sticky/index",
-    "van-skeleton": "@vant/weapp/skeleton/index"
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "van-progress": "@vant/weapp/progress/index"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

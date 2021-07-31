@@ -6,12 +6,7 @@ Page({
    * 页面的初始数据
    */
   dataList:[{
-    textRecently: "病人近况",
-    textColumn: "专栏动态",
-    textDiagnose: "诊断历史",
-    textDaily: "日常记录",
     active: 2,
-    dakara:'',
     dotShow: false,
     urlColumn: "../extra/column",
     pathList: [
@@ -38,12 +33,7 @@ Page({
       }
     ]
   },{
-    textRecently: "饮食近况",
-    textColumn: "推荐动态",
-    textDiagnose: "我的医嘱",
-    textDaily: "日常任务",
     active: 3,
-    dakara:'',
     dotShow: false,
     pathList: [
       'home/home',
@@ -75,12 +65,7 @@ Page({
       }
     ]
   },{
-    textRecently: "家属近况",
-    textColumn: "动态推荐",
-    textDiagnose: "家属医嘱",
-    textDaily: "亲属记录",
     active: 2,
-    dakara:'',
     dotShow: false,
     pathList: [
       'home/home',

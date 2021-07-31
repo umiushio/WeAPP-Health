@@ -45,3 +45,36 @@ view .nav-bar{
   justify-content: space-around;
   padding: 15rpx;
 }
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 800rpx;
+}
+.plus-list{
+  background-color: white;
+  margin-right: 10rpx;
+  width: 300rpx;
+}
+.popup-content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  padding: 20rpx;
+}
+.popp-content-title{
+  color: red;
+  font-size: 60rpx;
+  padding: 20rpx;
+  font-weight: bold;
+}
+.popp-content-progress{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.popp-content-message{
+  color: blue;
+  font-size: 50rpx;
+  padding: 15rpx;
+}

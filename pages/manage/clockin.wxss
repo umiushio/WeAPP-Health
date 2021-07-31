@@ -1,0 +1,4 @@
+/* pages/manage/clockin.wxss */
+.calendar {
+  --calendar-height: 1000rpx;
+}
