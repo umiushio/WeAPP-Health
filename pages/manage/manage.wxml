@@ -13,12 +13,12 @@
 <view class="button-menu">
   <van-button icon="edit" type="primary">制定今日计划</van-button>
   <van-button icon="todo-list-o" type="info">查看当前计划</van-button>
-  <van-icon name="plus"></van-icon>
+  <van-icon name="plus" bind:click="plus"></van-icon>
 </view>
 </van-sticky>
 <view class="view-content">
   <van-cell-group inset>
-    <van-cell center label="排行榜：第5名" size="large" is-link>
+    <van-cell center label="排行榜：第5名" size="large" is-link bind:click="clockin">
       <view slot="title" class="cell-title-display">
       <view class="cell-title-text">{{username}}</view>
       <view class="cell-title-text"><van-tag type="danger">勋爵</van-tag></view>
@@ -78,3 +78,34 @@
 <van-tabbar active="{{active}}" bind:change="onChangeTabbar">
   <van-tabbar-item wx:for="{{tabbarList}}" icon="{{item.icon}}" dot="{{item.dotShow}}" info="{{item.info}}">{{item.title}}</van-tabbar-item>
 </van-tabbar>
+<van-overlay show="{{ showOverlay }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="plus-list">
+    <van-cell-group center inset>
+      <van-cell icon="browsing-history-o" value="历史记录"></van-cell>
+      <van-cell icon="share-o" value="分享"></van-cell>
+      <van-cell icon="flag-o" value="我的目标"></van-cell>
+    </van-cell-group>
+    </view>
+  </view>
+</van-overlay>
+<van-popup
+  show="{{ showPopup }}"
+  round
+  position="center"
+  close-icon-position="top-right"
+  custom-style="width:600rpx"
+  bind:close="onClosePopup"
+>
+<view class="popup-content">
+  <view class="popp-content-title">
+    <text>当前打卡进度</text>
+  </view>
+  <view class="popp-content-progress">
+    <van-progress percentage="66" stroke-width="8" />
+  </view>
+  <view class="popp-content-message">
+    <text>达成目标还需34天</text>
+  </view>
+</view>
+</van-popup>
