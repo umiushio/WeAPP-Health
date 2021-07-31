@@ -11,17 +11,6 @@ AV.init({
 });
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
     const systemInfo = wx.getSystemInfoSync();
       // 胶囊按钮位置信息
       const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
@@ -30,8 +19,9 @@ App({
   },
   globalData: {
     userInfo: {
-      username: 'umi',
-      userRole: 1,
+      username: null,
+      phone: null,
+      userRole: null,
     },
     navBarHeight: 0, // 导航栏高度
     titleTop: wx.getSystemInfoSync().statusBarHeight,
@@ -48,5 +38,8 @@ App({
   },
   setUserRole(role){
     this.globalData.userInfo.userRole = role
+  },
+  setPhone(role){
+    this.globalData.userInfo.phone = role
   }
 })

@@ -19,8 +19,8 @@
       placeholder="请输入手机号"
       bind:change="inputPhone"
     >
-      <van-button slot="button" size="small" type="primary" bind:click="showMsgInfo">
-        发送验证码
+      <van-button slot="button" disabled='{{msgCodeDisabled}}' size="small" type="primary" bindtap="showMsgInfo">
+        {{msgCodeStr}}
       </van-button>
     </van-field>
     <van-field
@@ -84,7 +84,7 @@
     </view>
   </view>
   <view>
-  <van-button size="large" disabled='{{disabled}}' round type="primary" bindtap="register">注册</van-button>
+  <van-button size="large" disabled='{{policyNotChecked}}' round type="primary" bindtap="register">注册</van-button>
   </view>
 </view>
 <van-popup

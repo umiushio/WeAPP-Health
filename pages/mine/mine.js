@@ -222,8 +222,12 @@ Page({
     this.onClose();
   },
   loginOut(){
+    wx.clearStorageSync()
+    app.setPhone(null)
+    app.setUserName(null)
+    app.setUserRole(null)
     wx.redirectTo({
-      url: '../index/ad',
+      url: '../index/login',
     })
   }
 })

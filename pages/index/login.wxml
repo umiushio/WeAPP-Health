@@ -16,17 +16,20 @@
   <view class="input-padding">
   <van-cell-group inset>
     <van-field
-      value="{{ username }}"
+      value="{{ phone }}"
       clearable
-      label="用户名"
-      placeholder="请输入用户名或手机号"
-      bind:change="inputUsername"
-    />
+      label="手机号"
+      placeholder="请输入手机号"
+      bind:change="inputPhone"
+    >
+      <van-button wx:if="{{ loginMethodStr == '验证码'}}" slot="button" disabled='{{msgCodeDisabled}}' size="small" type="primary" bindtap="showMsgInfo">
+        {{msgCodeStr}}
+      </van-button></van-field>
     <van-field
       value="{{ password }}"
       type="password"
-      label="密码"
-      placeholder="请输入密码"
+      label="{{loginMethodStr}}"
+      placeholder="请输入{{loginMethodStr}}"
       border="{{ false }}"
       bind:change="inputPassword"
     />
@@ -36,7 +39,7 @@
 <view class="bottom">
   <view style="padding-left:50rpx; padding-right:50rpx;">
     <view class="message-login">
-      <text style="text-decoration:underline;" bindtap="loginMessage">短信登录</text>
+      <text style="text-decoration:underline;" bindtap="loginAlt">{{ altLoginMethodStr }}登录</text>
     </view>
     <view class="forget-pswd">
       <text style="text-decoration:underline;" bindtap="forgetPswd">忘记密码</text>
@@ -52,3 +55,4 @@
   </view>
 </view>
 <van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

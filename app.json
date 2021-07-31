@@ -18,6 +18,7 @@
     "Components/chat-frame/chat-right",
     "pages/extra/column",
     "Components/column/column",
+    "pages/index/forget",
     "pages/manage/clockin"
   ],
   "window": {
