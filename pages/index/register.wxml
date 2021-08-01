@@ -36,7 +36,7 @@
   <van-cell-group inset>
     <van-cell center title="选择身份">
     <van-dropdown-menu>
-      <van-dropdown-item value="{{role}}" options="{{roleOption}}"/>
+      <van-dropdown-item value="{{role}}" options="{{roleOption}}" bind:change="onChangeDropdown"/>
     </van-dropdown-menu>
     </van-cell>
     <van-field

@@ -243,7 +243,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var homeDotShow = "tabbarList[0].dotShow"
+    if(app.globalData.dakaraReady&&app.globalData.dakara){
+      this.setData({
+        [homeDotShow]: false
+      })
+    }else{
+      this.setData({
+        [homeDotShow]: true
+      })
+    }
   },
 
   /**
@@ -310,16 +319,6 @@ Page({
   },
   updateInfoTip(){
     var cntInfo = 0;
-    for(var index in this.data.itemLists){
-      if(!this.data.itemLists[index].item.scHidden && (this.data.itemLists[index].item.cntInfo!="")) cntInfo = cntInfo + this.data.itemLists[index].item.cntInfo;
-    }
-    if(cntInfo == 0) {
-      this.setData({cntInfo: '', emptyHidden: false})
-    } else {
-      this.setData({
-        cntInfo: cntInfo,
-      })
-    }
     var flag = false
     for(var index in this.data.itemLists){
       if(!this.data.itemLists[index].item.scHidden) {
@@ -327,8 +326,20 @@ Page({
         break
       }
     }
+    for(var index in this.data.itemLists){
+      if(!this.data.itemLists[index].item.scHidden && (this.data.itemLists[index].item.cntInfo!="")) cntInfo = cntInfo + this.data.itemLists[index].item.cntInfo;
+    }
     var chatIconInfo = "tabbarList["+this.data.active+"].info";
     this.setData({emptyHidden:flag, [chatIconInfo]: cntInfo})
+    if(cntInfo == 0) {
+      this.setData({cntInfo: '', [chatIconInfo]:''})
+      app.globalData.chatDotShow=false
+    } else {
+      this.setData({
+        cntInfo: cntInfo,
+      })
+      app.globalData.chatDotShow=true
+    }
   },
   placeTop(event){
     var id = event.currentTarget.dataset.id

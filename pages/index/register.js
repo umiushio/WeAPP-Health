@@ -62,6 +62,9 @@ Page({
       policyChecked: event.detail
     });
   },
+  onChangeDropdown(event){
+    this.setData({role:event.detail})
+  },
   // showRoleSelector(){
   //   this.setData({roleSelectorDisplayed:true})
   // },

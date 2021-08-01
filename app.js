@@ -23,6 +23,9 @@ App({
       phone: null,
       userRole: null,
     },
+    dakara:false,
+    dakaraReady:false,
+    chatDotShow: true,
     navBarHeight: 0, // 导航栏高度
     titleTop: wx.getSystemInfoSync().statusBarHeight,
     titleHeight: (wx.getMenuButtonBoundingClientRect().top - wx.getSystemInfoSync().statusBarHeight)*2 + wx.getMenuButtonBoundingClientRect().height,

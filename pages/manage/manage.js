@@ -137,7 +137,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var homeDotShow = "tabbarList[0].dotShow"
+    if(app.globalData.dakaraReady&&app.globalData.dakara){
+      this.setData({
+        [homeDotShow]: false
+      })
+    }else{
+      this.setData({
+        [homeDotShow]: true
+      })
+    }
+    if (app.globalData.userRole != 2) {
+      var chatDotShow = "tabbarList[1].dotShow"
+      this.setData({
+        [chatDotShow]: app.globalData.chatDotShow
+      })
+    }
   },
 
   /**
